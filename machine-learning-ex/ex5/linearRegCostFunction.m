@@ -22,12 +22,11 @@ grad = zeros(size(theta));
 
 
 
-J = 1/(2*m) * ((X*theta - y)'*(X*theta - y)) + lambda/(2*m) * (theta'*theta);
-J = J - lambda/(2*m) * theta(1)^2;
-mat = eye(size(theta,1));
+J = 1/(2*m) * ((X*theta - y)'*(X*theta - y)) + (lambda/(2*m)) * (theta'*theta);
+J = J - (lambda/(2*m)) * theta(1)^2;
 
-grad = 1/m * (X' * (X*theta - y)) + lambda/m * theta;
-grad(1) = grad(1) - lambda/m * theta(1);
+grad = 1/m * (X' * (X*theta - y)) + (lambda/m) * theta;
+grad(1) = grad(1) - (lambda/m) * theta(1);
 
 
 
