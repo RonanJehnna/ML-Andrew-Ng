@@ -20,7 +20,18 @@ idx = zeros(size(X,1), 1);
 %
 % Note: You can use a for-loop over the examples to compute this.
 %
-
+for i = 1:size(X,1)
+  min_dis = inf;
+  ind = 1;
+  for j =1:K
+    dis = sum((X(i,:)-centroids(j,:)).^2);
+    if min_dis > dis
+      min_dis = dis;
+      ind = j;
+    endif
+  endfor
+  idx(i) = ind;
+endfor
 
 
 
